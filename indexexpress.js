@@ -99,7 +99,7 @@ app.post('/register', async (req, res) => {
     }
     let users = await User.findOne({gmail});
     if(users) return res.redirect('/login')
-        
+
     let user = await User.create(obj)
     // res.json({success:true})
     // res.render('/login');
@@ -131,7 +131,6 @@ app.post('/logout', (req, res)=> {
     })
     res.redirect('/') 
 })
-
 
 app.listen(port, () => {
     console.log(`Sever is running on port ${port}`);
