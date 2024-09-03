@@ -28,6 +28,6 @@ export const userLogin = async (req, res) => {
     // first it will hash the input pass then check the hashed pass of db
     const validpass = await bcrypt.compare(password,user.password) 
     if(!validpass) return res.json({message:"password is wrong"})
-    const token = jwt.sign({userId:user._id},'@!$##@$%()',{expiresIn:'1d'})
+    const token = jwt.sign({userId:user._id},process.env.JWT_Screts,{expiresIn:'1d'})
     res.json({ message: `welcome back ${user.name}`,token });
 }

@@ -1,5 +1,5 @@
 import express from 'express'
-import { addcontact, deleteContact, getContactbyId, gteAllcontacts, updatContact } from '../controllers/Contact.js';
+import { addcontact, deleteContact, getContactbyId, getContactbyUserId, gteAllcontacts, updatContact } from '../controllers/Contact.js';
 
 import { Authenticate } from '../middleware/auth.js';
 
@@ -19,5 +19,7 @@ router.put('/:id',Authenticate,updatContact)
 
 // //delete contact
 router.delete('/:id',Authenticate,deleteContact)
+
+router.get('/userid/:id',getContactbyUserId)
 
 export default router

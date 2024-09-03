@@ -3,7 +3,8 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import userRouter from './routes/User.js';
 import contactRouter from './routes/Contact.js'
-
+import {config} from 'dotenv'
+import cors from 'cors'
 import { addcontact, deleteContact, getContactbyId, gteAllcontacts, updatContact } from './controllers/Contact.js';
 
 
@@ -12,8 +13,18 @@ const port = 3000;
 
 app.use(bodyParser.json());
 
+// .env setup
+config({path:'.env'})
+
+// cors
+app.use(cors({
+    origin:true,
+    methods:["POST","GET","PUT","DELETE"],
+    credentials:true
+}))
+
 // MongoDB setup
-mongoose.connect("mongodb+srv://akv8272:yporfkBreOt2PHtx@nodeexpressyoutube.6jd4j.mongodb.net/", {
+mongoose.connect(process.env.MongoUrl, {
     dbName: "Contactmastary"
 })
     .then(() => console.log("MongoDB is connected...!"))

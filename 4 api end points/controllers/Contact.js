@@ -63,3 +63,10 @@ export const deleteContact = async (req, res) => {
     }
 }
 
+// get Contact by userId
+export const getContactbyUserId = async (req,res)=>{
+    const id = req.params.id;
+    let contact = await Contact.find({user:id});
+    if(!contact) return res.status(404).json({message:"contact not found"});
+    res.json({message:"User specific contatct",contact})
+}
