@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mvc</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>MVC </h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+       <input type="file" name="file">
+       <input type="submit" name="submit" value="Upload">
+    </form>
+    <% if(url){ %>
+        <img src="<%=url%>" alt>
+        <% } %>
+</body>
+</html>
