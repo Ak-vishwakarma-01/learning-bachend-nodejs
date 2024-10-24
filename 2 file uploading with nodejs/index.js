@@ -17,7 +17,7 @@ app.use(express.static(path.join(path.resolve(),'public')))
 app.use(express.urlencoded({extended:true}))
 
 // Database connection
-mongoose.connect("mongodb+srv://akv8272:yporfkBreOt2PHtx@nodeexpressyoutube.6jd4j.mongodb.net/", {
+mongoose.connect("mongodb+srv:xpressyoutube.6jd4j.mongodb.net/", {
     dbName: "NodeExpressMongoDbYouTube"
 }).then(() => console.log("MongoDB is connected...!"))
     .catch((err) => console.error("MongoDB connection failed:", err));
