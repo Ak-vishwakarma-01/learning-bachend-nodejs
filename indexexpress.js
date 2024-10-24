@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
 
 // MongoDB connection
-mongoose.connect("mongodb+srv://akv8272:yporfkBreOt2PHtx@nodeexpressyoutube.6jd4j.mongodb.net/", {
+mongoose.connect("mongodb+srv://", {
     dbName: "NodeExpressMongoDbYouTube"
 }).then(() => console.log("MongoDB is connected...!"))
     .catch((err) => console.error("MongoDB connection failed:", err));
